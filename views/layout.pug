@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/assets/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/assets/css/styles.css')
+    script(src='/assets/js/jquery.min.js')
+    script(src='/assets/js/tether.min.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/jszip.min.js')
+    script(src='/assets/js/jszip-utils.min.js')
+    script(src='/assets/js/FileSaver.min.js')
+    script(src='/assets/js/app.js')
+  body
+    nav.navbar.navbar-toggleable-md.navbar-inverse.bg-primary.bg-faded
+      .container
+        button.navbar-toggler.navbar-toggler-right(type="button", data-toggle="collapse", data-target="#navbarNavAltMarkup", aria-controls="navbarNavAltMarkup", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon  
+        a.navbar-brand(href="/") GettoGram
+        #navbarNavAltMarkup.collapse.navbar-collapse
+          .navbar-nav
+            a.nav-item.nav-link.active(href="/") Home
+            a.nav-item.nav-link.active(href="/about") About
+            a.nav-item.nav-link.active(href="https://github.com/usameavci/gettogram") Github
+
+    main#main.container
+      block content

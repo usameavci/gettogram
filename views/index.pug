@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    if !images
+        form.card(action="/", method="POST")
+            .card-header
+                h3.card-title Image Page Links
+            .card-block
+                .form-group
+                    textarea.form-control(id="id_urls", name="urls", rows="10")
+            .card-footer.text-right
+                button.btn.btn-primary(type="submit") Get Images
+
+    if images && images.length > 0
+        .card
+            .card-header
+                .pull-right
+                    a.btn.btn-secondary(href="/") New Search
+                    a.btn.btn-secondary.download-all(href="javascript:") Download All
+                h3.card-title Results
+            table.table
+                thead
+                    tr
+                        th Image
+                        th.text-center(width="100") Download
+                tbody
+                    each image in images
+                        tr
+                            td
+                                img.img-responsive.image-rounded(src=image.url, width="100")
+                            td.text-center
+                                a.btn.btn-secondary(target="_blank", href="/download?url=" + image.url, title=image.name) Download
